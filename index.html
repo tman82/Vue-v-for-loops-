@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+
+    <div id="vue-app">
+      <h1>Looping through lists</h1>
+      <ul>
+        <li v-for="student in students">{{ student }}</li>
+        <li v-for="student in students">{{ student }}</li>
+      </ul>
+      <ul>
+        <li v-for="aStudent in aStudents">{{ aStudent.name }} - {{ aStudent.grade }}</li>
+      </ul>
+      <template v-for="aStudent in aStudents">
+        <h3>{{ aStudent.name }}</h3>
+        <p>{{ aStudent.grades }}</p>
+      </template>
+      <template v-for="aStudent in aStudents">
+         <div v-for="(val, key) in aStudent">
+           <p>{{ key }} - {{ val }}</p>
+         </div>
+      </template>
+    </div>
+
+
+
+    <script src="app.js"></script>
+  </body>
+</html>
