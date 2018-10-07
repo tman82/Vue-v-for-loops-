@@ -3,29 +3,26 @@
   <head>
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-
+    <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
   <body>
 
     <div id="vue-app">
-      <h1>Looping through lists</h1>
-      <ul>
-        <li v-for="student in students">{{ student }}</li>
-        <li v-for="student in students">{{ student }}</li>
-      </ul>
-      <ul>
-        <li v-for="aStudent in aStudents">{{ aStudent.name }} - {{ aStudent.grade }}</li>
-      </ul>
-      <template v-for="aStudent in aStudents">
-        <h3>{{ aStudent.name }}</h3>
-        <p>{{ aStudent.grades }}</p>
-      </template>
-      <template v-for="aStudent in aStudents">
-         <div v-for="(val, key) in aStudent">
-           <p>{{ key }} - {{ val }}</p>
-         </div>
-      </template>
+      <!-- bag image -->
+      <div id="bag" v-bind:class="{ burst: ended}"></div>
+
+      <!-- bag health -->
+      <div id="bag-health">
+        <div v-bind:style="{ width: health + '%' }"></div>
+      </div>
+
+      <!-- bag controls -->
+      <div id="controls">
+        <button v-on:click="punch" v-show="!ended">Punch</button>
+        <button v-on:click="restart">Restart</button>
+      </div>
+
     </div>
 
 
